@@ -23,8 +23,8 @@ public class ExampleUnitTest {
     public void checkTax() {
         calculations.incrementHat();
         calculations.incrementNecklace();
-        double subtotal = calculations.updateSubtotal();
-        double tax = calculations.updateTax();
+        calculations.updateSubtotal();
+        calculations.updateTax();
         double total = calculations.updateTotal();
         assertEquals(46.33, total, 1e-15);
     }
