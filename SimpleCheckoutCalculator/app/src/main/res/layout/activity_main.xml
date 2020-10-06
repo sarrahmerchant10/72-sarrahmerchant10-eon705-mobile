@@ -6,13 +6,248 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageButton
+        android:id="@+id/sunglasses_increase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="16dp"
+        android:onClick="increaseItemQuantity"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/sunglasses_quantity"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <ImageButton
+        android:id="@+id/necklace_increase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="increaseItemQuantity"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/necklace_quantity"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="151dp"
+        android:layout_height="157dp"
+        android:gravity="center_horizontal"
+        android:text="\n\n\n\nSunglasses"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="151dp"
+        android:layout_height="157dp"
+        android:gravity="center_horizontal"
+        android:text="\n\n\n\nHat"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.811" />
+
+    <TextView
+        android:layout_width="151dp"
+        android:layout_height="157dp"
+        android:text="\n\n\n\nNecklace"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.074"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="143dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="241dp"
+        android:layout_marginLeft="241dp"
+        android:layout_marginBottom="69dp"
+        android:text="Proceed to Checkout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="64dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginBottom="13dp"
+        android:text="sub total"
+        app:layout_constraintBottom_toTopOf="@+id/subtotal"
+        app:layout_constraintStart_toEndOf="@+id/necklace_increase" />
+
+    <TextView
+        android:id="@+id/subtotal"
+        android:layout_width="151dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="14dp"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/GST"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/GST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="15dp"
+        android:text="GST/HST"
+        app:layout_constraintBottom_toTopOf="@+id/tax"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="14dp"
+        android:text="Discount Code"
+        app:layout_constraintBottom_toTopOf="@+id/discount_input"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tax"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="17dp"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginBottom="11dp"
+        android:text="Total"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/total"
+        app:layout_constraintStart_toEndOf="@+id/sunglasses_increase" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="138dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginBottom="135dp"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+    <ImageButton
+        android:id="@+id/hat_increase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:onClick="increaseItemQuantity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hat_quantity"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <ImageButton
+        android:id="@+id/necklace_decrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="increaseItemQuantity"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <ImageButton
+        android:id="@+id/hat_decrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginBottom="68dp"
+        android:onClick="increaseItemQuantity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <ImageButton
+        android:id="@+id/sunglasses_decrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="increaseItemQuantity"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/necklace_quantity"
+        android:layout_width="51dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="21dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/necklace_decrease" />
+
+    <TextView
+        android:id="@+id/sunglasses_quantity"
+        android:layout_width="51dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="16dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/sunglasses_decrease" />
+
+    <TextView
+        android:id="@+id/hat_quantity"
+        android:layout_width="51dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="68dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hat_decrease" />
+
+    <EditText
+        android:id="@+id/discount_input"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="7dp"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
